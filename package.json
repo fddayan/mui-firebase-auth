@@ -7,8 +7,8 @@
     "start": "react-scripts start",
     "build": "NODE_ENV=production babel src/components --presets react-app --out-dir dist --copy-files",
     "test:start": "react-scripts test --env=jsdom", 
-    "test": "react-scripts test --env=jsdom --watchAll=false",
-    "lint:ci": "eslint --output-file eslint_report.json --format json './src/**/*'",
+    "test": "react-scripts test --max-warnings=0 --env=jsdom --watchAll=false",
+    "lint:ci": "eslint --max-warnings=0 --output-file eslint_report.json --format json './src/**/*'",
     "lint": "eslint './src/**/*'",
     "prepare": "husky install"
   },
