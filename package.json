@@ -6,7 +6,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "NODE_ENV=production babel src/components --presets react-app --out-dir dist --copy-files",
-    "test": "react-scripts test --env=jsdom"
+    "test:start": "react-scripts test --env=jsdom", 
+    "test": "react-scripts test --env=jsdom --watchAll=false",
+    "lint:ci": "eslint --output-file eslint_report.json --format json './src/**/*'",
+    "lint": "eslint './src/**/*'",
+    "prepare": "husky install"
   },
   "keywords": [
     "firebase",
@@ -30,7 +34,10 @@
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.0.3",
     "enzyme": "^3.11.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
     "msw": "^0.38.1",
+    "prettier": "2.5.1",
     "react-scripts": "^5.0.0"
   },
   "author": "Federico Dayan",
@@ -45,6 +52,11 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --single-quote --write --ignore-unknown"
     ]
   }
 }
