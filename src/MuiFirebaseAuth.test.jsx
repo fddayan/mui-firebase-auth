@@ -1,12 +1,11 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import {render, fireEvent, waitFor, screen, act} from '@testing-library/react'
 
 import MuiFirebaseAuth from './components/MuiFirebaseAuth'
 import SignUp from './components/MuiFirebaseAuth/SignUp'
 import ForgotPassword  from './components/MuiFirebaseAuth/ForgotPassword'
 import SignIn from './components/MuiFirebaseAuth/SignIn'
-import TextField from '@mui/material/TextField';
 
 const API_KEY = "xxxx"
 

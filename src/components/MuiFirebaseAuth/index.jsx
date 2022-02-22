@@ -5,8 +5,6 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import ForgotPassword from './ForgotPassword';
 import DefaultService from './service';
-import { isEmpty } from 'lodash';
-
 
 const setUserInStorage = (attributes) => {
   localStorage.setItem('user', JSON.stringify(attributes))
